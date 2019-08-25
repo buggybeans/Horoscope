@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body onload=getHoroscope()>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+          <a class="navbar-brand" href="#">Horoscope</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Features</a>
+              <a class="nav-item nav-link" href="#">Pricing</a>
+              <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+            </div>
+          </div>
+        </nav>
+        <div class="contianer">
+
+            <center><h2>Horoscope</h2></center>
+
+          <div class="row" id="show">
+         
+
+          <!-- <div class="col-md-3 ">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="aries.jpg" style="size: height:250px; width: 150px; " alt="">
+                    <div class="overlay">
+                       <h2>Aries</h2>
+                       <a class="info" href="#">link here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="taurus.jpg" style="size: height:250px; width: 150px; " alt="">
+                    <div class="overlay">
+                       <h2>Taurus</h2>
+                       <a class="info" href="#">link here</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="gemini.jpg" style="size: height:250px; width: 150px; " alt="">
+                        <div class="overlay">
+                           <h2>Gemini</h2>
+                           <a class="info" href="#">link here</a>
+                        </div>
+                    </div>
+          </div> -->
+          </div>
+   <script> 
+      function getHoroscope() { 
+        var str = '';
+        axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
+            .then(res => {
+                for (i = 0; i < res.data.feed.entry.length; i++){
+                  str+=`<div class="mx-auto  mt-3">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 150px; width: 100%;" 
+                    alt="">
+                    <div class="overlay">
+                       <h2>${res.data.feed.entry[i].gsx$name.$t} </h2>
+                       <a class="info" href="#"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#abc${res.data.feed.entry[i].gsx$name.$t}">
+  Show
+</button></a> 
+<!-- Modal -->
+<div class="modal fade" id="abc${res.data.feed.entry[i].gsx$name.$t}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          ${res.data.feed.entry[i].gsx$desc.$t}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok!</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- Button trigger modal -->
+
+            <!-- Button trigger modal -->
+
+
+            `
+            
+                    //str += `${res.data.feed.entry[i].gsx$name.$t} <---> ${res.data.feed.entry[i].gsx$desc.$t} <---> ${res.data.feed.entry[i].gsx$link.$t}<br>`;
+                }
+                document.getElementById('show').innerHTML = str;
+            })
+            .catch(e => {
+                console.log(e) 
+            })
+    }
+   </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
