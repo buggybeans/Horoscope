@@ -9,9 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>Hello, world!</title>
+    <title>Horoscope!</title>
   </head>
   <body onload=getHoroscope()>
+    <!-- <Start of header> -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
           <a class="navbar-brand" href="#">Horoscope</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,100 +23,19 @@
               <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="#">Features</a>
               <a class="nav-item nav-link" href="#">Pricing</a>
-              <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
             </div>
           </div>
         </nav>
+        <!-- <End of header> -->
         <div class="contianer">
-
-            <center><h2>Horoscope</h2></center>
+          <center><p id="date">
+               <h2>Horoscope</h2>
+              </p>
+            </center>
 
           <div class="row" id="show">
-         
-
-          <!-- <div class="col-md-3 ">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="aries.jpg" style="size: height:250px; width: 150px; " alt="">
-                    <div class="overlay">
-                       <h2>Aries</h2>
-                       <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="taurus.jpg" style="size: height:250px; width: 150px; " alt="">
-                    <div class="overlay">
-                       <h2>Taurus</h2>
-                       <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 ">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="gemini.jpg" style="size: height:250px; width: 150px; " alt="">
-                        <div class="overlay">
-                           <h2>Gemini</h2>
-                           <a class="info" href="#">link here</a>
-                        </div>
-                    </div>
-          </div> -->
           </div>
-   <script> 
-      function getHoroscope() { 
-        var str = '';
-        axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
-            .then(res => {
-                for (i = 0; i < res.data.feed.entry.length; i++){
-                  str+=`<div class="mx-auto  mt-3">
-                <div class="hovereffect">
-                    <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 150px; width: 100%;" 
-                    alt="">
-                    <div class="overlay">
-                       <h2>${res.data.feed.entry[i].gsx$name.$t} </h2>
-                       <a class="info" href="#"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#abc${res.data.feed.entry[i].gsx$name.$t}">
-  Show
-</button></a> 
-<!-- Modal -->
-<div class="modal fade" id="abc${res.data.feed.entry[i].gsx$name.$t}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          ${res.data.feed.entry[i].gsx$desc.$t}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok!</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-                    </div>
-                </div>
-            </div> 
-            
-            <!-- Button trigger modal -->
-
-            <!-- Button trigger modal -->
-
-
-            `
-            
-                    //str += `${res.data.feed.entry[i].gsx$name.$t} <---> ${res.data.feed.entry[i].gsx$desc.$t} <---> ${res.data.feed.entry[i].gsx$link.$t}<br>`;
-                }
-                document.getElementById('show').innerHTML = str;
-            })
-            .catch(e => {
-                console.log(e) 
-            })
-    }
-   </script>
+   <script src="horoscope.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
