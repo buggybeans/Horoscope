@@ -11,7 +11,7 @@ function getHoroscope() {
             for (i = 0; i < res.data.feed.entry.length; i++){
               str+=`<div class="mx-auto  mt-3 border border-danger">
             <div class="hovereffect">
-                <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 150px; width: 150px;" 
+                <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 300px; width: 300px;" 
                 alt="">
                 <div class="overlay">
                    <h2>${res.data.feed.entry[i].gsx$name.$t} </h2>
