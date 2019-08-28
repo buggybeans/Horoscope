@@ -24,7 +24,7 @@ Show
 <div class="modal-content bg-dark">
   <div class="modal-header mx-auto">
   
-    <h5 class="modal-title bg-warning text-dark" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
+    <h5 class="modal-title text-white" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
    
     
   </div>
