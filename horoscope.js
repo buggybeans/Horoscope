@@ -21,12 +21,12 @@ Show
 
 <div class="modal fade" id="abc${res.data.feed.entry[i].gsx$name.$t}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+<div class="modal-content bg-dark">
+  <div class="modal-header mx-auto">
+  
+    <h5 class="modal-title bg-warning text-dark" id="exampleModalLongTitle">${res.data.feed.entry[i].gsx$name.$t}</h5>
+   
+    
   </div>
   <div class="modal-body">
       ${res.data.feed.entry[i].gsx$desc.$t}
