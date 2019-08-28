@@ -22,10 +22,11 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
 
       }
    
-    </style>
-    <title>Horoscope!</title>
+    </style>  
+    
+    <title>Horoscope!</title> 
   </head>
-  <body onload=getHoroscope()>
+  <body onload=getHoroscope("res.data.feed.entry[i].gsx$today.$t")> 
     <!-- <Start of header> -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
           <a class="navbar-brand" href="#">Horoscope</a>
@@ -37,6 +38,12 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
               <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="#">Features</a>
               <a class="nav-item nav-link" href="#">Pricing</a>
+              <select id="xyz" onchange="getD()">
+                <option value="res.data.feed.entry[i].gsx$a28.$t">2908</option>
+                <option value="2" selected="selected">2508</option>
+                <option value="3">test3</option>
+              </select>
+
             </div>
           </div>
         </nav>

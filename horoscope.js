@@ -1,14 +1,17 @@
-function getHoroscope() { 
+function getHoroscope(dt) { 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    // alert(dt)
     var n = new Date();
-    var y = n.getFullYear();
+    var y = n.getFullYear(); 
     var m = n.getMonth();
-    var d = n.getDate();
+    var d = n.getDate(); 
     document.getElementById("date").innerHTML = d + " " + months[m] + " " + y;
     var str = '';
     axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
-        .then(res => {
+        .then(res => { 
+          alert(dt) 
             for (i = 0; i < res.data.feed.entry.length; i++){
+               desc = dt;
               str+=`<div class="mx-auto  mt-3 border border-danger ">
             <div class="hovereffect">
                 <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 150px; width: 150px;" 
@@ -29,7 +32,7 @@ Show
     
   </div>
   <div class="modal-body">
-      ${res.data.feed.entry[i].gsx$desc.$t}
+      ${desc}
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok!</button>
@@ -47,8 +50,17 @@ Show
                 //str += `${res.data.feed.entry[i].gsx$name.$t} <---> ${res.data.feed.entry[i].gsx$desc.$t} <---> ${res.data.feed.entry[i].gsx$link.$t}<br>`;
             }
             document.getElementById('show').innerHTML = str;
+          // }
+          // else{
+          //   document.getElementById('show').innerHTML = "please select other date";
+          // }
+          
         })
         .catch(e => {
             console.log(e) 
         })
+}
+
+function getD(){
+  getHoroscope(document.getElementById('xyz').value) 
 }
