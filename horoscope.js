@@ -1,6 +1,6 @@
 function getHoroscope(dt) { 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    // alert(dt)
+    alert(dt)
     var n = new Date();
     var y = n.getFullYear(); 
     var m = n.getMonth();
@@ -65,5 +65,5 @@ Show
 }
 
 function getD(){
-  getHoroscope(document.getElementById('xyz').value) 
+  getHoroscope('gsx$'+document.getElementById('xyz').value) 
 }
