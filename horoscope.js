@@ -1,6 +1,5 @@
 function getHoroscope(dt) { 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    alert(dt)
     var n = new Date();
     var y = n.getFullYear(); 
     var m = n.getMonth();
@@ -9,7 +8,7 @@ function getHoroscope(dt) {
     var str = '';
     axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
         .then(res => { 
-          data = res
+      
         
             for (i = 0; i < res.data.feed.entry.length; i++){
               //temp = res.data.feed.entry[i].gsx$today;
