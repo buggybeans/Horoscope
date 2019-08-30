@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <style>
-      body, {
-        background: #348F50;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #56B4D3, #348F50);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      body{      
+background: #FF8008;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
       }
       .modal-body {
         background: #e65c00;  /* fallback for old browsers */
@@ -26,8 +27,9 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
     
     <title>Horoscope!</title> 
   </head>
-  <body onload=getHoroscope("gsx$today")> 
+  <body  onload=getHoroscope("gsx$today") > 
     <!-- <Start of header> -->
+        <!-- bgcolor="#FF1493" -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
           <a class="navbar-brand" href="#">Horoscope</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,13 +47,14 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
               </select>
 
             </div>
-          </div>
+          </div> 
         </nav>
         <!-- <End of header> -->
         <div class="container">
-          <center><p id="date">
-               <h2>Horoscope</h2>
-              </p>
+          <center>
+               <!-- <h2>Horoscope</h2> -->
+               <img src="logo2.jpg" style= "width: 300px;" height: 80%;>
+               <p id="date"></p>
             </center>
             
             <div class="container">
