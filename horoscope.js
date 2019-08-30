@@ -9,9 +9,12 @@ function getHoroscope(dt) {
     var str = '';
     axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
         .then(res => { 
-          alert(dt) 
+          data = res
+        
             for (i = 0; i < res.data.feed.entry.length; i++){
-               desc = dt;
+              //temp = res.data.feed.entry[i].gsx$today;
+              //temp1 = temp.q;
+               
               str+=`<div class="mx-auto  mt-3 border border-danger ">
             <div class="hovereffect">
                 <img class="img-responsive" src="${res.data.feed.entry[i].gsx$link.$t}" style="height: 150px; width: 150px;" 
@@ -32,7 +35,7 @@ Show
     
   </div>
   <div class="modal-body">
-      ${desc}
+  ${res.data.feed.entry[i][dt].$t}
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok!</button>
