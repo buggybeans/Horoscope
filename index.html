@@ -9,13 +9,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <style>
-      #nav-tabContent{      
-background: #FF8008;  /* fallback for old browsers */
+    <style> 
+    body{
+      background: #FF8008;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-      }
+    }
+      /* #nav-tabContent{      
+/* background: #FF8008;  fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #FFC837, #FF8008); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      /* } */ 
       .modal-body {
         background: #e65c00;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
@@ -66,8 +72,8 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
         transition: background 0.20s linear;
 
     }
-   
-    </style>  
+  
+    </style> 
     
     <title>Horoscope!</title> 
   </head>
@@ -102,7 +108,7 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" onclick="getHoroscope('gsx$month')" href="#nav-home" role="tab" aria-controls="nav-contact" aria-selected="false">Month</a>
               </div>
             </nav>
-            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+            <!-- <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent"> -->
 
               <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                  
@@ -119,7 +125,7 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
                       
                     </div>
                   </div>
-                  </div>
+                  <!-- </div> -->
                   
                   </div>
               
@@ -132,7 +138,7 @@ background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, F
         
         <!-- <End of header> -->
         
-        <div class="bg-danger">
+        <div class="bg-danger mt-2">
           <!-- Start of Footer -->
       <footer class="page-footer font-small blue bg-danger text-white">
       
