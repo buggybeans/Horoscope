@@ -95,3 +95,66 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  body{
+    background: #FF8008;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+    /* #nav-tabContent{      
+/* background: #FF8008;  fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #FFC837, #FF8008); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* } */ 
+    .modal-body {
+      background: #e65c00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    
+    nav>.nav.nav-tabs {
+
+      border: none;
+      color: #fff;
+      background: #272e38;
+      border-radius: 0;
+
+  }
+
+  nav>div a.nav-item.nav-link {
+
+      border: none;
+      padding: 18px 25px;
+      color: #000;
+      background: #dd1055;
+      border-radius: 0;
+
+  }
+
+  nav>div a.nav-item.nav-link.active {
+      border: none;
+      padding: 18px 25px;
+      color: #000;
+      background: #dd1055; 
+      border-radius: 0;
+      background-color: #8439af;
+  }
+
+
+  .tab-content {
+      background: #fdfdfd;
+
+  } 
+
+  nav>div a.nav-item.nav-link:hover,
+  nav>div a.nav-item.nav-link:focus {
+      border: none;
+      background:#8439af;
+      color: #f8f8f8;
+      border-radius: 0;
+      transition: background 0.20s linear;
+
+  }
