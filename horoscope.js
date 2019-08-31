@@ -4,7 +4,20 @@ function getHoroscope(dt) {
     var y = n.getFullYear(); 
     var m = n.getMonth();
     var d = n.getDate(); 
+    var d1 = d-7;
+    alert(dt)
+    document.getElementById("date").style.font = "italic bold 30px arial,serif";
     document.getElementById("date").innerHTML = d + " " + months[m] + " " + y;
+    if(dt == 'gsx$month'){
+      document.getElementById("date").innerHTML =  months[m] + " " + y;
+    }
+    else if(dt == 'gsx$today'){
+      document.getElementById("date").innerHTML = d + " " + months[m] + " " + y;
+    }
+    else{
+      document.getElementById("date").innerHTML = d + "-"+  d1 + " " + months[m] + " " + y;
+    }
+
     var str = '';
     axios.get('https://spreadsheets.google.com/feeds/list/1GsZAXEMPH8pPcHi5ok7K4UaWAOttq4-nC-4Pl-ZP-2s/od6/public/values?alt=json')
         .then(res => { 
@@ -63,6 +76,23 @@ Show
         })
 }
 
-function getD(){
-  getHoroscope('gsx$'+document.getElementById('xyz').value) 
-}
+// function getD(dt){
+//   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//     var n = new Date();
+//     var y = n.getFullYear(); 
+//     var m = n.getMonth();
+//     var d = n.getDate(); 
+//     var d1 = d-7;
+//     alert(dt)
+//     if(dt == 'gsx$month'){
+//       document.getElementById("date").innerHTML =  months[m] + " " + y;
+//     }
+//     else if(dt == 'gsx$today'){
+//       document.getElementById("date").innerHTML = d + " " + months[m] + " " + y;
+//     }
+//     else{
+//       document.getElementById("date").innerHTML = d + "-"+  d1 + " " + months[m] + " " + y;
+//     }
+
+//   getHoroscope(dt) ;
+// }
